@@ -11,15 +11,17 @@ More and more data scientists run their Nvidia GPU based inference tasks on Kube
 
 Now there is a GPU sharing solution on native Kubernetes: it is based on scheduler extenders and device plugin mechanism, so you can reuse this solution easily in your own Kubernetes. 
 
-## Prerequisites
+## Prerequisites (Instal all of them before and check with nvidia-smi to confirm that it's ok)
 
 - Kubernetes 1.11+
 - golang 1.19+
-- NVIDIA drivers ~= 361.93
+- NVIDIA drivers ~= 361.93 (important)
 - Nvidia-docker version > 2.0 (see how to [install](https://github.com/NVIDIA/nvidia-docker) and it's [prerequisites](https://github.com/nvidia/nvidia-docker/wiki/Installation-\(version-2.0\)#prerequisites))
 - Docker configured with Nvidia as the [default runtime](https://github.com/NVIDIA/nvidia-docker/wiki/Advanced-topics#default-runtime).
+- Note:
+    + You can see how to [install](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#) Nvidia-container-toolkit and config default runtime which include: [docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#docker), [containerd](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#id5)
 
-## Design
+## Design (read it to understand how it work)
 
 For more details about the design of this project, please read this [Design document](docs/designs/designs.md).
 
@@ -88,7 +90,7 @@ If you are intrested in GPUShare and would like to share your experiences with o
 ## Acknowledgments
 
 - GPU sharing solution is based on [Nvidia Docker2](https://github.com/NVIDIA/nvidia-docker), and their [gpu sharing design](https://docs.google.com/document/d/1ZgKH_K4SEfdiE_OfxQ836s4yQWxZfSjS288Tq9YIWCA/edit#heading=h.r88v2xgacqr) is our reference. The Nvidia Community is very supportive and We are very grateful.
-
+- You can read way to [fix bug](https://www.cnblogs.com/oolo/p/11687040.html)
 
 
 

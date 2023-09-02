@@ -20,7 +20,7 @@ Enable the Nvidia runtime as your default runtime on your node. To do this, plea
 
 > *if `runtimes` is not already present, head to the install page of [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)*
 
-## 1\. Deploy GPU share scheduler extender in control plane
+## 1\. Deploy GPU share scheduler extender in control plane (sure that all of services are active with kubelet)
 
 ```bash
 kubectl create -f https://raw.githubusercontent.com/AliyunContainerService/gpushare-scheduler-extender/master/config/gpushare-schd-extender.yaml
